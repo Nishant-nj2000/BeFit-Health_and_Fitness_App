@@ -4,15 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView1;
     TextView textView2;
+
+    EditText email;
+    EditText password;
+    Button login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +47,32 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,Forgot_Password.class);
                 startActivity(intent);
-                finish();
+            }
+        });
+
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        login = findViewById(R.id.login);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(TextUtils.isEmpty(email.getText()) ||  TextUtils.isEmpty(password.getText()))
+                {
+                    if(TextUtils.isEmpty((email.getText())))
+                    {
+                        email.requestFocus();
+                        email.setError("Email cannot be empty !");
+                    }
+                    else
+                    {
+                        password.requestFocus();
+                        password.setError("Password cannot be empty !");
+                    }
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/product_sans_bold"
             android:layout_marginTop="20dp"
             android:text="Welcome Back"
             android:textColor="@color/textHeadline"
@@ -47,43 +47,66 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/product_sans"
             android:textColor="@color/textDescription"
             android:text="Sign in to continue" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableStart="@drawable/ic_baseline_email_24"
-            android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawablePadding="16dp"
-            android:inputType="textEmailAddress"
-            android:padding="16dp"
-            android:textSize="14sp"
-            android:hint="Email" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="#B9B8B8"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/product_sans"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="16dp"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textSize="14sp"
+                android:id="@+id/email"
+                android:hint="Email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawableEnd="@drawable/ic_baseline_visibility_24"
-            android:drawablePadding="16dp"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textSize="14sp"
-            android:hint="Password" />
+            android:textColorHint="#B9B8B8"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/product_sans"
+                android:hint="Create Password"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:fontFamily="@font/product_sans"
+            android:layout_marginTop="23dp"
             android:background="@drawable/button_bg"
             android:text="Sign In"
+            android:id="@+id/login"
             android:textColor="@color/white" />
 
 
@@ -93,6 +116,7 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/product_sans_italic"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="30dp"
         android:alpha="1"
@@ -110,6 +134,7 @@
         android:text="@string/register_button"
         android:textColor="@color/textHeadline"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/product_sans"
         android:layout_marginBottom="30dp"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="14sp"
