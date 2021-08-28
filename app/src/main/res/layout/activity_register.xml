@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    
     <ImageView
         android:id="@+id/imgView_logo"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:scaleType="centerInside"
         android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHeight_percent=".27"/>
+
 
     <LinearLayout
         android:alpha="1"
@@ -27,7 +32,6 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,76 +41,123 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/product_sans_bold"
             android:layout_marginTop="20dp"
             android:textColor="@color/textHeadline"
             android:text="Create a BeFit Account"
             android:textSize="15sp"
             android:textStyle="bold"/>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableStart="@drawable/ic_baseline_email_24"
-            android:drawableLeft="@drawable/ic_baseline_email_24"
-            android:drawablePadding="16dp"
-            android:inputType="textEmailAddress"
-            android:padding="16dp"
-            android:textSize="14sp"
+            android:textColorHint="#B9B8B8"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext_bg"
+                android:fontFamily="@font/product_sans"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="16dp"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:id="@+id/email"
+                android:textSize="14sp"
+                android:hint="Email" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            android:hint="Email" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawableEnd="@drawable/ic_baseline_visibility_24"
-            android:drawablePadding="16dp"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textSize="14sp"
-            android:hint="Create Password" />
+            android:textColorHint="#B9B8B8"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/product_sans"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="16dp"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:textSize="14sp"
+                android:id="@+id/password"
+                android:hint="Create Password" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/edittext_bg"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
-            android:drawableEnd="@drawable/ic_baseline_visibility_24"
-            android:drawablePadding="16dp"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textSize="14sp"
-            android:hint="Re-type Password" />
+            android:textColorHint="#B9B8B8"
+            app:passwordToggleEnabled="true"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+            <EditText
+                android:id="@+id/cnfpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/product_sans"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="16dp"
+                android:padding="16dp"
+                android:textSize="14sp"
+                android:hint="Re-type Password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:layout_width="match_parent"
+            android:id="@+id/register"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="23dp"
             android:background="@drawable/button_bg"
             android:text="Get Started"
+            android:elevation="100dp"
+            android:fontFamily="@font/product_sans"
             android:textColor="@color/white" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="101dp"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="210dp"
+                android:layout_marginEnd="93dp"
+                android:src="@drawable/google"
+                app:fabSize="mini"
+                app:maxImageSize="20dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="148dp"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/twitter"
+                app:fabSize="mini"
+                app:maxImageSize="30dp" />
+
+        </RelativeLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_button"
-        android:textColor="@color/textHeadline"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

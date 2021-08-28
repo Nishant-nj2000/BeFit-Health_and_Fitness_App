@@ -16,15 +16,6 @@ public class Forgot_Password extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_forgot_password);
-
-        textView1 = (TextView)findViewById(R.id.goback);
-        textView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(Forgot_Password.this,MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        
     }
 }
