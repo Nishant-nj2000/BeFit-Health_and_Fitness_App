@@ -8,14 +8,17 @@
 
     <ImageView
         android:id="@+id/imgView_logo"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_marginTop="30dp"
         android:scaleType="centerInside"
         android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintHeight_percent=".27"/>
 
     <LinearLayout
         android:alpha="1"
@@ -27,7 +30,6 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:gravity="center"
-        android:layout_marginTop="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,25 +56,26 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
+            app:hintEnabled="false"
             android:textColorHint="#B9B8B8"
+            android:layout_marginTop="40dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/product_sans"
-                android:layout_marginTop="30dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/ic_baseline_email_24"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="16dp"
+                android:fontFamily="@font/product_sans"
+                android:hint="Email"
+                android:includeFontPadding="true"
                 android:inputType="textEmailAddress"
                 android:padding="16dp"
-                android:textSize="14sp"
-                android:id="@+id/email"
-                android:hint="Email" />
+                android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -80,20 +83,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#B9B8B8"
-            app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
+            android:layout_marginTop="20dp"
             app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp">
-
+            app:boxStrokeWidthFocused="0dp"
+            app:passwordToggleEnabled="true">
             <EditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="16dp"
                 android:fontFamily="@font/product_sans"
-                android:hint="Create Password"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="16dp"
                 android:textSize="14sp" />

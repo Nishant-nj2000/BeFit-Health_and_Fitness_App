@@ -48,26 +48,30 @@
             android:textSize="15sp"
             android:textStyle="bold"/>
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#B9B8B8"
+            app:hintEnabled="false"
+            android:layout_marginTop="30dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
             <EditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:background="@drawable/edittext_bg"
-                android:fontFamily="@font/product_sans"
                 android:drawableStart="@drawable/ic_baseline_email_24"
                 android:drawableLeft="@drawable/ic_baseline_email_24"
                 android:drawablePadding="16dp"
+                android:fontFamily="@font/product_sans"
+                android:hint="Email"
+                android:includeFontPadding="true"
                 android:inputType="textEmailAddress"
                 android:padding="16dp"
-                android:id="@+id/email"
-                android:textSize="14sp"
-                android:hint="Email" />
+                android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -75,31 +79,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#B9B8B8"
-            app:passwordToggleEnabled="true"
             app:boxStrokeWidth="0dp"
-            app:boxStrokeWidthFocused="0dp">
+            app:hintEnabled="false"
+            app:boxStrokeWidthFocused="0dp"
+            app:passwordToggleEnabled="true">
+
             <EditText
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/product_sans"
                 android:background="@drawable/edittext_bg"
                 android:drawableStart="@drawable/ic_baseline_lock_24"
                 android:drawablePadding="16dp"
+                android:fontFamily="@font/product_sans"
+                android:hint="Create Password"
                 android:inputType="textPassword"
                 android:padding="16dp"
-                android:textSize="14sp"
-                android:id="@+id/password"
-                android:hint="Create Password" />
+                android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#B9B8B8"
             app:passwordToggleEnabled="true"
+            app:hintEnabled="false"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
             <EditText
