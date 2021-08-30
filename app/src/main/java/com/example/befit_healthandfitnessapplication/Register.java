@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -14,6 +15,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
 
@@ -57,8 +61,41 @@ public class Register extends AppCompatActivity {
                         cnfpassword.requestFocus();
                         cnfpassword.setError("Confirm password cannot be empty !");
                     }
-                }else {
-                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    String emailToText = email.getText().toString();
+                    String passwordToText = password.getText().toString();
+                    String cnfPasswordToText = cnfpassword.getText().toString();
+
+                    if(!Patterns.EMAIL_ADDRESS.matcher(emailToText).matches())
+                    {
+                        email.requestFocus();
+                        email.setError("Invalid Email !");
+                    }
+                    else if(!passwordToText.matches(cnfPasswordToText))
+                    {
+                        password.requestFocus();
+                        password.setError("Passwords do not match");
+                    }
+                    else if(passwordToText.matches(cnfPasswordToText))
+                    {
+                         final Pattern PASSWORD_PATTERN =
+                                Pattern.compile("^" +
+                                        "(?=.*[@#$%^&+=])" +     // at least 1 special character
+                                        "(?=\\S+$)" +            // no white spaces
+                                        ".{8,}" +                // at least 8 characters
+                                        "$");
+                         if(!PASSWORD_PATTERN.matcher(passwordToText).matches())
+                         {
+                             password.requestFocus();
+                             password.setError("Use 8 characters with a mix of letters, numbers & symbols");
+                         }
+                         else
+                         {
+                             Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                         }
+                    }
                 }
             }
         });

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView1;
@@ -70,8 +73,34 @@ public class MainActivity extends AppCompatActivity {
                         password.setError("Password cannot be empty !");
                     }
                 }
-                else{
-                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                else
+                {
+                    String emailToText = email.getText().toString();
+                    String passwordToText = password.getText().toString();
+
+                    if(!Patterns.EMAIL_ADDRESS.matcher(emailToText).matches())
+                    {
+                        email.requestFocus();
+                        email.setError("Invalid Email !");
+                    }
+                    else
+                    {
+                        final Pattern PASSWORD_PATTERN =
+                                Pattern.compile("^" +
+                                        "(?=.*[@#$%^&+=])" +     // at least 1 special character
+                                        "(?=\\S+$)" +            // no white spaces
+                                        ".{8,}" +                // at least 8 characters
+                                        "$");
+                        if(!PASSWORD_PATTERN.matcher(passwordToText).matches())
+                        {
+                            password.requestFocus();
+                            password.setError("Use 8 characters with a mix of letters, numbers & symbols");
+                        }
+                        else
+                        {
+                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                        }
+                    }
                 }
             }
         });
