@@ -122,6 +122,31 @@
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/Gender"
+            android:background="@drawable/edittext_bg"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="77dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/product_sans"
+                android:layout_marginLeft="10dp"
+                android:hint="Male"
+                android:textSize="15dp" />
+
+            <RadioButton
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/product_sans"
+                android:hint="Female"
+                android:textSize="15dp" />
+        </RadioGroup>
+
+
         <Button
             android:layout_width="match_parent"
             android:id="@+id/register"
@@ -133,36 +158,7 @@
             android:fontFamily="@font/product_sans"
             android:textColor="@color/white" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="101dp"
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginLeft="195dp"
-                android:layout_marginEnd="108dp"
-                android:src="@drawable/google"
-                app:fabSize="mini"
-                app:maxImageSize="20dp" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="181dp"
-                android:layout_marginRight="50dp"
-                android:src="@drawable/twitter"
-                app:fabSize="mini"
-                app:maxImageSize="30dp" />
-
-        </RelativeLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
