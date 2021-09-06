@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Befit - Health and Fitness Application</string>
+    <string name="app_name">BeFit</string>
     <string name="register_button">Don\'t have an account?<b> SignUp Here</b></string>
     <string name="forgot_password">Forgot Password ?</string>
     <string name="login_button">Already have an account?<b> SignIn Here</b></string>
