@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,11 +22,8 @@ import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
 
-    EditText email;
-    EditText password;
-    EditText cnfpassword;
-    Button register;
-    CheckBox show_password;
+    EditText txtemail,txtpassword,txtcnfpassword;
+    Button btn_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,50 +33,50 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        register = findViewById(R.id.register);
-        cnfpassword = findViewById(R.id.cnfpassword);
+        txtemail = (EditText) findViewById(R.id.email);
+        txtpassword = (EditText) findViewById(R.id.password);
+        btn_register = (Button) findViewById(R.id.register);
+        txtcnfpassword = (EditText) findViewById(R.id.cnfpassword);
 
 
-        register.setOnClickListener(new View.OnClickListener() {
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(email.getText()) ||  TextUtils.isEmpty(password.getText()) || TextUtils.isEmpty(cnfpassword.getText()))
+                if(TextUtils.isEmpty(txtemail.getText()) ||  TextUtils.isEmpty(txtpassword.getText()) || TextUtils.isEmpty(txtcnfpassword.getText()))
                 {
-                    if(TextUtils.isEmpty((email.getText())))
+                    if(TextUtils.isEmpty((txtemail.getText())))
                     {
-                        email.requestFocus();
-                        email.setError("Email cannot be empty !");
+                        txtemail.requestFocus();
+                        txtemail.setError("Email cannot be empty !");
                     }
-                    else if(TextUtils.isEmpty((password.getText())))
+                    else if(TextUtils.isEmpty((txtpassword.getText())))
                     {
-                        password.requestFocus();
-                        password.setError("Password cannot be empty !");
+                        txtpassword.requestFocus();
+                        txtpassword.setError("Password cannot be empty !");
                     }
                     else
                     {
-                        cnfpassword.requestFocus();
-                        cnfpassword.setError("Confirm password cannot be empty !");
+                        txtcnfpassword.requestFocus();
+                        txtcnfpassword.setError("Confirm password cannot be empty !");
                     }
                 }
                 else
                 {
-                    String emailToText = email.getText().toString();
-                    String passwordToText = password.getText().toString();
-                    String cnfPasswordToText = cnfpassword.getText().toString();
+                    String email = txtemail.getText().toString();
+                    String password = txtpassword.getText().toString();
+                    String cnfPassword = txtcnfpassword.getText().toString();
 
-                    if(!Patterns.EMAIL_ADDRESS.matcher(emailToText).matches())
+                    if(Patterns.EMAIL_ADDRESS.matcher(email).matches() == false)
                     {
-                        email.requestFocus();
-                        email.setError("Invalid Email !");
+                        txtemail.requestFocus();
+                        txtemail.setError("Invalid Email !");
                     }
-                    else if(!passwordToText.matches(cnfPasswordToText))
+                    else if(!password.matches(cnfPassword))
                     {
-                        password.requestFocus();
-                        password.setError("Passwords do not match");
+                        txtcnfpassword.requestFocus();
+                        txtcnfpassword.setError("Passwords do not match");
                     }
-                    else if(passwordToText.matches(cnfPasswordToText))
+                    else if(password.matches(cnfPassword))
                     {
                          final Pattern PASSWORD_PATTERN =
                                 Pattern.compile("^" +
@@ -86,14 +84,14 @@ public class Register extends AppCompatActivity {
                                         "(?=\\S+$)" +            // no white spaces
                                         ".{8,}" +                // at least 8 characters
                                         "$");
-                         if(!PASSWORD_PATTERN.matcher(passwordToText).matches())
+                         if(!PASSWORD_PATTERN.matcher(password).matches())
                          {
-                             password.requestFocus();
-                             password.setError("Use 8 characters with a mix of letters, numbers & symbols");
+                             txtpassword.requestFocus();
+                             txtpassword.setError("Use 8 characters with a mix of letters, numbers & symbols");
                          }
                          else
                          {
-                             Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                             Toast.makeText(getApplicationContext(),  email+ "\n" +password, Toast.LENGTH_SHORT).show();
                          }
                     }
                 }
