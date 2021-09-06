@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +25,8 @@ public class Register extends AppCompatActivity {
 
     EditText txtemail,txtpassword,txtcnfpassword;
     Button btn_register;
+    RadioGroup gender_grp;
+    RadioButton gender_radio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +40,20 @@ public class Register extends AppCompatActivity {
         txtpassword = (EditText) findViewById(R.id.password);
         btn_register = (Button) findViewById(R.id.register);
         txtcnfpassword = (EditText) findViewById(R.id.cnfpassword);
+        gender_grp = (RadioGroup) findViewById(R.id.gender);
 
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String email = txtemail.getText().toString();
+                String password = txtpassword.getText().toString();
+                String cnfPassword = txtcnfpassword.getText().toString();
+                int selectedId = gender_grp.getCheckedRadioButtonId();
+                gender_radio = (RadioButton) findViewById(selectedId);
+                String gender = gender_radio.getText().toString();
+
                 if(TextUtils.isEmpty(txtemail.getText()) ||  TextUtils.isEmpty(txtpassword.getText()) || TextUtils.isEmpty(txtcnfpassword.getText()))
                 {
                     if(TextUtils.isEmpty((txtemail.getText())))
@@ -62,11 +74,8 @@ public class Register extends AppCompatActivity {
                 }
                 else
                 {
-                    String email = txtemail.getText().toString();
-                    String password = txtpassword.getText().toString();
-                    String cnfPassword = txtcnfpassword.getText().toString();
 
-                    if(Patterns.EMAIL_ADDRESS.matcher(email).matches() == false)
+                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
                     {
                         txtemail.requestFocus();
                         txtemail.setError("Invalid Email !");
@@ -91,7 +100,7 @@ public class Register extends AppCompatActivity {
                          }
                          else
                          {
-                             Toast.makeText(getApplicationContext(),  email+ "\n" +password, Toast.LENGTH_SHORT).show();
+                             Toast.makeText(getApplicationContext(), email +"\n"+ password +"\n"+ gender, Toast.LENGTH_SHORT).show();
                          }
                     }
                 }
