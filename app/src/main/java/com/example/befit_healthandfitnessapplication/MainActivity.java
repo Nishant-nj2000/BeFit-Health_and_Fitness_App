@@ -1,5 +1,6 @@
 package com.example.befit_healthandfitnessapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,18 +12,24 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView1;
     TextView textView2;
-
-    EditText email;
-    EditText password;
-    Button login;
+    EditText txtemail, txtpassword;
+    Button btn_login;
+    ProgressBar progressBar;
+    FirebaseAuth fAuth;
 
 
     @Override
@@ -35,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
         textView1 = (TextView)findViewById(R.id.register);
         textView2 = (TextView)findViewById(R.id.forgotPassword);
+        txtemail = (EditText) findViewById(R.id.email);
+        txtpassword = (EditText) findViewById(R.id.password);
+        btn_login = (Button) findViewById(R.id.login);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        fAuth = FirebaseAuth.getInstance();
 
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,35 +65,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        login = findViewById(R.id.login);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(TextUtils.isEmpty(email.getText()) ||  TextUtils.isEmpty(password.getText()))
+
+                String email = txtemail.getText().toString();
+                String password = txtpassword.getText().toString();
+
+                if(TextUtils.isEmpty(txtemail.getText()) ||  TextUtils.isEmpty(txtpassword.getText()))
                 {
-                    if(TextUtils.isEmpty((email.getText())))
+                    if(TextUtils.isEmpty((txtemail.getText())))
                     {
-                        email.requestFocus();
-                        email.setError("Email cannot be empty !");
+                        txtemail.requestFocus();
+                        txtpassword.setError("Email cannot be empty !");
                     }
                     else
                     {
-                        password.requestFocus();
-                        password.setError("Password cannot be empty !");
+                        txtpassword.requestFocus();
+                        txtpassword.setError("Password cannot be empty !");
                     }
                 }
                 else
                 {
-                    String emailToText = email.getText().toString();
-                    String passwordToText = password.getText().toString();
-
-                    if(!Patterns.EMAIL_ADDRESS.matcher(emailToText).matches())
+                    if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
                     {
-                        email.requestFocus();
-                        email.setError("Invalid Email !");
+                        txtemail.requestFocus();
+                        txtemail.setError("Invalid Email !");
                     }
                     else
                     {
@@ -91,14 +101,32 @@ public class MainActivity extends AppCompatActivity {
                                         "(?=\\S+$)" +            // no white spaces
                                         ".{8,}" +                // at least 8 characters
                                         "$");
-                        if(!PASSWORD_PATTERN.matcher(passwordToText).matches())
+                        if(!PASSWORD_PATTERN.matcher(password).matches())
                         {
-                            password.requestFocus();
-                            password.setError("Use 8 characters with a mix of letters, numbers & symbols");
+                            txtpassword.requestFocus();
+                            txtpassword.setError("Use 8 characters with a mix of letters, numbers & symbols");
                         }
                         else
                         {
-                            Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                            btn_login.setVisibility(View.INVISIBLE);
+                            progressBar.setVisibility(View.VISIBLE);
+
+                            // authenticate the user
+                            fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful())
+                                    {
+                                        Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(getApplicationContext(), Dashboard_User.class));
+                                        finish();
+                                    }
+                                    else
+                                    {
+                                        Toast.makeText(getApplicationContext(), "Error !" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                         }
                     }
                 }

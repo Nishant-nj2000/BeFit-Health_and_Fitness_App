@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "110174036085",
+    "project_id": "befit-health-and-fitness",
+    "storage_bucket": "befit-health-and-fitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110174036085:android:3898dd5bbf72aee7fbd83c",
+        "android_client_info": {
+          "package_name": "com.example.befit_healthandfitnessapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110174036085-6vn05vkfv51n80rrtc4hcl7lbkoj203l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUqDgPfw91QS8uL1IGDRCzRJZElsq3JB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110174036085-6vn05vkfv51n80rrtc4hcl7lbkoj203l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
