@@ -130,6 +130,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lin_inputs" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="@id/forgotPassword"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="554dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
@@ -142,5 +154,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
