@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     EditText txtemail, txtpassword;
     Button btn_login;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
+    DBHelper db;
 
 
     @Override
@@ -40,13 +40,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_main);
 
+        db = new DBHelper(this);
         textView1 = (TextView)findViewById(R.id.register);
         textView2 = (TextView)findViewById(R.id.forgotPassword);
         txtemail = (EditText) findViewById(R.id.email);
         txtpassword = (EditText) findViewById(R.id.password);
         btn_login = (Button) findViewById(R.id.login);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        fAuth = FirebaseAuth.getInstance();
+
 
         textView1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,29 +109,27 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            btn_login.setVisibility(View.INVISIBLE);
-                            progressBar.setVisibility(View.VISIBLE);
-
-                            // authenticate the user
-                            fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if(task.isSuccessful())
-                                    {
-                                        Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(getApplicationContext(), Dashboard_User.class));
-                                        finish();
-                                    }
-                                    else
-                                    {
-                                        Toast.makeText(getApplicationContext(), "Error !" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
+                            Boolean res = db.checkUser(email,password);
+                            if(res == true)
+                            {
+                                btn_login.setVisibility(View.INVISIBLE);
+                                progressBar.setVisibility(View.VISIBLE);
+                                Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(getApplicationContext(), Dashboard_User.class));
+                                finish();
+                            }
+                            else
+                            {
+                                btn_login.setVisibility(View.VISIBLE);
+                                progressBar.setVisibility(View.INVISIBLE);
+                                Toast.makeText(MainActivity.this, "Incorrect Email id or Password !", Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 }
             }
+
+
         });
     }
 }
