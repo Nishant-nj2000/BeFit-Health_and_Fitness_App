@@ -36,9 +36,8 @@ public class Register extends AppCompatActivity {
     Button btn_register;
     RadioGroup gender_grp;
     RadioButton gender_radio;
-    FirebaseDatabase rootnode;
-    DatabaseReference reference;
     ProgressBar progressBar;
+    DBHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,21 +46,14 @@ public class Register extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_register);
 
-
+        db = new DBHelper(this);
         txtemail = (EditText) findViewById(R.id.email);
         txtpassword = (EditText) findViewById(R.id.password);
         btn_register = (Button) findViewById(R.id.register);
         txtcnfpassword = (EditText) findViewById(R.id.cnfpassword);
         gender_grp = (RadioGroup) findViewById(R.id.gender);
-//      fAuth = FirebaseAuth.getInstance();
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
-//        if(fAuth.getCurrentUser() != null)
-//        {
-//            Toast.makeText(getApplicationContext(), "User Already Exists !", Toast.LENGTH_SHORT).show();
-//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//            finish();
-//        }
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,34 +121,21 @@ public class Register extends AppCompatActivity {
                          }
                          else
                          {
-                             btn_register.setVisibility(View.INVISIBLE);
-                             progressBar.setVisibility(View.VISIBLE);
-
-                            // register user in firebase
-//                             fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                                 @Override
-//                                 public void onComplete(@NonNull Task<AuthResult> task) {
-//                                     if(task.isSuccessful())
-//                                     {
-//                                         Toast.makeText(getApplicationContext(), "User Created Successfully", Toast.LENGTH_SHORT).show();
-//                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
-//                                         finish();
-//                                     }
-//                                     else
-//                                     {
-//                                         Toast.makeText(getApplicationContext(), "Error !" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                                     }
-//                                 }
-//                             });
-//
-                             rootnode = FirebaseDatabase.getInstance();
-                             reference = rootnode.getReference("users");
-                             UserHelperClass helperClass = new UserHelperClass(email,password,gender);
-                             reference.setValue(helperClass);
-                             Toast.makeText(getApplicationContext(), "User Created Successfully", Toast.LENGTH_SHORT).show();
-                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                             finish();
-
+                             long val = db.addUser(email,gender,password);
+                             if(val>0)
+                             {
+                                 btn_register.setVisibility(View.INVISIBLE);
+                                 progressBar.setVisibility(View.VISIBLE);
+                                 Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
+                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                 finish();
+                             }
+                             else
+                             {
+                                 btn_register.setVisibility(View.VISIBLE);
+                                 progressBar.setVisibility(View.INVISIBLE);
+                                 Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_SHORT).show();
+                             }
                          }
                     }
                 }
