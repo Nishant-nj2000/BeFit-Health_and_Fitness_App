@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -33,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//hide title bar
         getSupportActionBar().hide();
+        SharedPreferences prefs = getSharedPreferences("user", MODE_PRIVATE);
+        boolean isLoggedIn= prefs.getBoolean("isLoggedIn", false);
+
+        if(isLoggedIn){
+            startActivity(new Intent(getApplicationContext(),navigation_drawer.class));
+            finish();
+            return;
+        }
         setContentView(R.layout.activity_main);
 
         db = new DBHelper(this);
@@ -109,8 +118,13 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 btn_login.setVisibility(View.INVISIBLE);
                                 progressBar.setVisibility(View.VISIBLE);
+                                SharedPreferences.Editor editor = getSharedPreferences("user", MODE_PRIVATE).edit();
+                                editor.putString("email", email);
+                                editor.putString("password", password);
+                                editor.putBoolean("isLoggedIn", true);
+                                editor.apply();
                                 Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(getApplicationContext(), Dashboard_User.class));
+                                startActivity(new Intent(getApplicationContext(), navigation_drawer.class));
                                 finish();
                             }
                             else
