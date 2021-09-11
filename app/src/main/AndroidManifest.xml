@@ -14,8 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BefitHealthAndFitnessApplication">
         <activity
-            android:name=".Dashboard_User"
-            android:exported="true" />
+            android:name=".navigation_drawer"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/Theme.BefitHealthAndFitnessApplication.NoActionBar" />
         <activity
             android:name=".Forgot_Password"
             android:exported="true" />
