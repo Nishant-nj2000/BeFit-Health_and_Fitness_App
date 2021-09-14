@@ -11,14 +11,25 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.BefitHealthAndFitnessApplication.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
+            android:id="@+id/toolbar"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.BefitHealthAndFitnessApplication.PopupOverlay" />
+            app:popupTheme="@style/Theme.BefitHealthAndFitnessApplication.PopupOverlay">
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
 
     </com.google.android.material.appbar.AppBarLayout>
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            app:popupTheme="@style/Theme.BefitHealthAndFitnessApplication.PopupOverlay" />-->
+
+
 
     <include layout="@layout/content_navigation_drawer" />
 
@@ -29,6 +40,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@drawable/ic_baseline_help_24"
+        app:maxImageSize="40dp"
+        app:fabSize="mini"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
