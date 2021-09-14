@@ -10,9 +10,9 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Befit.db";
-    public static final String TABLE_NAME = "users";
-    public static final String COL_1 = "user_id";
+    public static final String DATABASE_NAME = "befit.db";
+    public static final String TABLE_NAME = "user";
+    public static final String COL_1 = "userid";
     public static final String COL_2 = "email";
     public static final String COL_3 = "gender";
     public static final String COL_4 = "password";
@@ -23,13 +23,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE users (user_id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT,gender TEXT, password TEXT)");
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
-        onCreate(sqLiteDatabase);
+
     }
 
     public long addUser(String email, String gender, String password)
@@ -39,7 +38,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("email",email);
         contentValues.put("gender",gender);
         contentValues.put("password",password);
-        long res = db.insert("users", null, contentValues);
+        long res = db.insert("user", null, contentValues);
         db.close();
         return res;
     }

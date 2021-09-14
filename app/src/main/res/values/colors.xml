@@ -7,5 +7,7 @@
     <color name="textDescription">#686868</color>
     <color name="lightGrey">#EAEAEA</color>
     <color name="white">#FFFFFF</color>
+    <color name="colorblack">#000000</color>
+
 
 </resources>

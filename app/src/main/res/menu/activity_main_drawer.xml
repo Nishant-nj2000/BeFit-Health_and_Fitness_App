@@ -7,23 +7,27 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_baseline_home_24"
-            android:title="@string/home" />
+            android:title="@string/home"
+            android:fontFamily="@font/product_sans_bold"/>
         <item
             android:id="@+id/nav_plans"
             android:icon="@drawable/ic_baseline_plan_24"
-            android:title="@string/Training_Plans" />
+            android:title="@string/Training_Plans"
+            android:fontFamily="@font/product_sans_bold"/>
         <item
             android:id="@+id/nav_reports"
             android:icon="@drawable/ic_baseline_bar_chart_24"
-            android:title="@string/reports" />
-        <item
-            android:id="@+id/reminders"
-            android:icon="@drawable/ic_baseline_calendar_today_24"
-            android:title="@string/reminders" />
+            android:title="@string/reports"
+            android:fontFamily="@font/product_sans_bold"/>
         <item
             android:id="@+id/nav_goals"
             android:icon="@drawable/ic_baseline_goal_fixed_24"
-            android:title="@string/goals" />
-
+            android:title="@string/goals"
+            android:fontFamily="@font/product_sans_bold"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_baseline_settings_24"
+            android:title="@string/settings"
+            android:fontFamily="@font/product_sans_bold"/>
     </group>
 </menu>
