@@ -13,25 +13,25 @@
 
     <fragment
         android:id="@+id/nav_plans"
-        android:name="com.example.befit_healthandfitnessapplication.ui.plans.PlansFragment"
+        android:name="com.example.befit_healthandfitnessapplication.Plan_Fragment"
         android:label="@string/Training_Plans"
         tools:layout="@layout/plans_fragment" />
 
     <fragment
         android:id="@+id/nav_reports"
-        android:name="com.example.befit_healthandfitnessapplication.ui.reports.ReportsFragment"
+        android:name="com.example.befit_healthandfitnessapplication.Report_fragment"
         android:label="@string/reports"
         tools:layout="@layout/reports_fragment" />
 
     <fragment
         android:id="@+id/nav_goals"
-        android:name="com.example.befit_healthandfitnessapplication.ui.goals.GoalsFragment"
+        android:name="com.example.befit_healthandfitnessapplication.Goal_Fragment"
         android:label="@string/goals"
         tools:layout="@layout/goals_fragment" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.befit_healthandfitnessapplication.ui.settings.SettingsFragment"
+        android:name="com.example.befit_healthandfitnessapplication.Settings_fragment"
         android:label="@string/settings"
         tools:layout="@layout/settings_fragment" />
 
