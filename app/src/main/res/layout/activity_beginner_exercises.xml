@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!--<androidx.core.widget.NestedScrollView-->
-<!--    layout_width="match_parent"-->
-<!--    layout_height="match_parent"-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    tools:context=".ui.plans.PlansFragment">-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    layout_width="match_parent"
+    layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/custom_background_diagonal">
+    tools:context=".ui.plans.PlansFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_background">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/first"
             android:layout_width="402dp"
             android:layout_height="196dp"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
             android:clickable="true"
             app:cardBackgroundColor="@color/white"
@@ -39,7 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="179dp"
                 android:layout_gravity="center"
-                android:background="@drawable/beginner"
+                android:background="@drawable/abs_beginner"
                 android:foreground="@drawable/image_overlay" />
 
 
@@ -51,7 +50,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/product_sans"
-                android:text="BEGINNER"
+                android:text="ARM BEGINNER"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -96,11 +95,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/product_sans"
-                android:text="INTERMEDIATE"
+                android:text="CHEST BEGINNER"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
+
+
 
 
         <androidx.cardview.widget.CardView
@@ -138,11 +139,13 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/product_sans"
-                android:text="ADVANCED"
+                android:text="LEG BEGINNER"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-<!--</androidx.core.widget.NestedScrollView>-->
+</androidx.core.widget.NestedScrollView>
+
+
