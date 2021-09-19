@@ -104,7 +104,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/fourth"
+            android:id="@+id/third"
             android:layout_width="402dp"
             android:layout_height="196dp"
             android:layout_below="@id/second"
@@ -142,7 +142,8 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
         </androidx.cardview.widget.CardView>
 
-    </RelativeLayout>
+</RelativeLayout>
 <!--</androidx.core.widget.NestedScrollView>-->
