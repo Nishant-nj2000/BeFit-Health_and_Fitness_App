@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,24 +60,57 @@ public class Plan_Fragment extends Fragment {
         }
     }
 
-    private CardView cardView1;
     Intent intent;
-    private CardView cardView2;
-    private CardView cardView3;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
             View view = inflater.inflate(R.layout.plans_fragment, container, false);
-            intent = new Intent(getActivity(),BeginnerExercises.class);
-            final CardView button = (CardView) view.findViewById(R.id.first);
-            button.setOnClickListener(new View.OnClickListener() {
+
+            final CardView cardview1 = (CardView) view.findViewById(R.id.first);
+            final CardView cardview2 = (CardView) view.findViewById(R.id.second);
+            final CardView cardview3 = (CardView) view.findViewById(R.id.third);
+
+            cardview1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(intent);
+                    Beginner_Exercises beginner_exercises = new Beginner_Exercises();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,beginner_exercises,"null");
+                    fragmentTransaction.addToBackStack("null");
+                    fragmentTransaction.commit();
+
                 }
             });
+
+        cardview2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intermediate_Exercises intermediate_exercises = new Intermediate_Exercises();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,intermediate_exercises,"null");
+                fragmentTransaction.addToBackStack("null");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        cardview3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Advanced_Exercises advanced_exercises = new Advanced_Exercises();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,advanced_exercises,"null");
+                fragmentTransaction.addToBackStack("null");
+                fragmentTransaction.commit();
+
+            }
+        });
+
             return  view;
     }
 }
