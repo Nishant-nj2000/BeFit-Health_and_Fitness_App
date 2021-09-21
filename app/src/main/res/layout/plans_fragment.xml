@@ -17,6 +17,11 @@
     android:background="@drawable/custom_background_diagonal">
 
 
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/idRVPlan"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
         <androidx.cardview.widget.CardView
             android:id="@+id/first"
             android:layout_width="402dp"
@@ -144,6 +149,7 @@
                 android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
+
 
 </RelativeLayout>
 <!--</androidx.core.widget.NestedScrollView>-->

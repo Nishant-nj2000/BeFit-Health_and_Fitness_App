@@ -7,11 +7,15 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,29 +65,41 @@ public class Plan_Fragment extends Fragment {
     }
 
     Intent intent;
+    private ArrayList<PlanModel> planModelArrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-            View view = inflater.inflate(R.layout.plans_fragment, container, false);
+        View view = inflater.inflate(R.layout.plans_fragment, container, false);
 
-            final CardView cardview1 = (CardView) view.findViewById(R.id.first);
-            final CardView cardview2 = (CardView) view.findViewById(R.id.second);
-            final CardView cardview3 = (CardView) view.findViewById(R.id.third);
+//        RecyclerView planRV = view.findViewById(R.id.idRVPlan);
+//        planModelArrayList = new ArrayList<>();
+//        planModelArrayList.add(new PlanModel("BEGINNER",R.drawable.beginner));
+//        planModelArrayList.add(new PlanModel("INTERMEDIATE",R.drawable.intermediate));
+//        planModelArrayList.add(new PlanModel("ADVANCED",R.drawable.advanced));
+//
+//        PlanAdapter planAdapter = new PlanAdapter(this, planModelArrayList);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Plan_Fragment.this,LinearLayoutManager.VERTICAL,false);
+//        planRV.setLayoutManager(linearLayoutManager);
+//        planRV.setAdapter(planAdapter);
 
-            cardview1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Beginner_Exercises beginner_exercises = new Beginner_Exercises();
-                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,beginner_exercises,"null");
-                    fragmentTransaction.addToBackStack("null");
-                    fragmentTransaction.commit();
+        final CardView cardview1 = (CardView) view.findViewById(R.id.first);
+        final CardView cardview2 = (CardView) view.findViewById(R.id.second);
+        final CardView cardview3 = (CardView) view.findViewById(R.id.third);
 
-                }
-            });
+        cardview1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Beginner_Exercises beginner_exercises = new Beginner_Exercises();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,beginner_exercises,"null");
+                fragmentTransaction.addToBackStack("null");
+                fragmentTransaction.commit();
+
+            }
+        });
 
         cardview2.setOnClickListener(new View.OnClickListener() {
             @Override

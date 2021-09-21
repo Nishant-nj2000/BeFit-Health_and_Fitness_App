@@ -38,7 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="179dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/arm_beginner"
+                    android:background="@drawable/arms_adv"
                     android:foreground="@drawable/image_overlay" />
 
                 <TextView
@@ -79,7 +79,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="179dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/chest_beginner"
+                    android:background="@drawable/chest_adv"
                     android:foreground="@drawable/image_overlay" />
 
                 <TextView
@@ -121,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="179dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/leg_beginner"
+                    android:background="@drawable/legs_adv"
                     android:foreground="@drawable/image_overlay" />
 
                 <TextView
@@ -164,7 +164,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="179dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/abs_beginner"
+                    android:background="@drawable/abs_adv"
                     android:foreground="@drawable/image_overlay" />
 
                 <TextView
