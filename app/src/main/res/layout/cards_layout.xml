@@ -24,16 +24,15 @@
         tools:layout_editor_absoluteY="3dp">
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/idIVPlanImage"
             android:layout_width="wrap_content"
             android:layout_height="179dp"
             android:layout_gravity="center"
-            android:background="@drawable/beginner"
             android:foreground="@drawable/image_overlay" />
 
 
         <TextView
-            android:id="@+id/beginner"
+            android:id="@+id/idTVPlanName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|left"
@@ -41,7 +40,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/product_sans"
-            android:text="BEGINNER"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -51,89 +49,89 @@
 
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/second"
-        android:layout_width="402dp"
-        android:layout_height="196dp"
-        android:layout_below="@id/first"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:clickable="true"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-72dp"
-        tools:layout_editor_absoluteY="3dp">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/second"-->
+<!--        android:layout_width="402dp"-->
+<!--        android:layout_height="196dp"-->
+<!--        android:layout_below="@id/first"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:clickable="true"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:cardElevation="10dp"-->
+<!--        app:cardMaxElevation="12dp"-->
+<!--        app:cardPreventCornerOverlap="false"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="-72dp"-->
+<!--        tools:layout_editor_absoluteY="3dp">-->
 
 
-        <ImageView
-            android:id="@+id/img3"
-            android:layout_width="wrap_content"
-            android:layout_height="179dp"
-            android:layout_gravity="center"
-            android:background="@drawable/intermediate"
-            android:foreground="@drawable/image_overlay" />
+<!--        <ImageView-->
+<!--            android:id="@+id/img3"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="179dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/intermediate"-->
+<!--            android:foreground="@drawable/image_overlay" />-->
 
-        <TextView
-            android:id="@+id/intermediate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|left"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/product_sans"
-            android:text="INTERMEDIATE"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/fourth"
-        android:layout_width="402dp"
-        android:layout_height="196dp"
-        android:layout_below="@id/second"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:clickable="true"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        app:cardPreventCornerOverlap="false"
-        app:cardUseCompatPadding="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-72dp"
-        tools:layout_editor_absoluteY="3dp">
+<!--        <TextView-->
+<!--            android:id="@+id/intermediate"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="top|left"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:fontFamily="@font/product_sans"-->
+<!--            android:text="INTERMEDIATE"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
+<!--    </androidx.cardview.widget.CardView>-->
 
 
-        <ImageView
-            android:id="@+id/img4"
-            android:layout_width="wrap_content"
-            android:layout_height="179dp"
-            android:layout_gravity="center"
-            android:background="@drawable/advanced"
-            android:foreground="@drawable/image_overlay" />
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/fourth"-->
+<!--        android:layout_width="402dp"-->
+<!--        android:layout_height="196dp"-->
+<!--        android:layout_below="@id/second"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:clickable="true"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:cardElevation="10dp"-->
+<!--        app:cardMaxElevation="12dp"-->
+<!--        app:cardPreventCornerOverlap="false"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="-72dp"-->
+<!--        tools:layout_editor_absoluteY="3dp">-->
 
-        <TextView
-            android:id="@+id/advanced"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top|left"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/product_sans"
-            android:text="ADVANCED"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/img4"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="179dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:background="@drawable/advanced"-->
+<!--            android:foreground="@drawable/image_overlay" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/advanced"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="top|left"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:fontFamily="@font/product_sans"-->
+<!--            android:text="ADVANCED"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
+<!--    </androidx.cardview.widget.CardView>-->
 
 </RelativeLayout>
