@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_plans"
         android:name="com.example.befit_healthandfitnessapplication.Plan_Fragment"
         android:label="Plans"
         tools:layout="@layout/plans_fragment" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_settings"
         android:name="com.example.befit_healthandfitnessapplication.Settings_fragment"
         android:label="Settings"
         tools:layout="@layout/settings_fragment" />

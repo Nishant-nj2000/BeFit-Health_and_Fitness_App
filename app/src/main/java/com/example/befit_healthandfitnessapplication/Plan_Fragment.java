@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 
 /**
@@ -126,6 +128,7 @@ public class Plan_Fragment extends Fragment {
 
             }
         });
+
 
             return  view;
     }

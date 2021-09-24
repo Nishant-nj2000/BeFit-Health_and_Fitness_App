@@ -119,6 +119,9 @@ public class Register extends AppCompatActivity {
                              {
                                  btn_register.setVisibility(View.INVISIBLE);
                                  progressBar.setVisibility(View.VISIBLE);
+                                 progressBar.setSecondaryProgress(100);
+                                 progressBar.setProgress(10);
+                                 progressBar.setMax(100);
                                  Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                                  startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                  finish();

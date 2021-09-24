@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.befit_healthandfitnessapplication.R;
-import com.example.befit_healthandfitnessapplication.ui.plans.PlansFragment;
+//import com.example.befit_healthandfitnessapplication.ui.plans.PlansFragment;
 
 public class HomeFragment extends Fragment {
 
