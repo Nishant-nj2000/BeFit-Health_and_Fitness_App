@@ -121,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
                             {
                                 btn_login.setVisibility(View.INVISIBLE);
                                 progressBar.setVisibility(View.VISIBLE);
+                                progressBar.setSecondaryProgress(100);
+                                progressBar.setProgress(10);
+                                progressBar.setMax(100);
                                 SharedPreferences.Editor editor = getSharedPreferences("user", MODE_PRIVATE).edit();
                                 editor.putString("email", email);
                                 editor.putString("password", password);
