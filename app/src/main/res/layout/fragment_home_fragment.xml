@@ -19,19 +19,20 @@
             android:id="@+id/first_row"
             android:layout_width="match_parent"
             android:layout_height="184dp"
-            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="162dp"
                 android:layout_height="165dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginHorizontal="28dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                android:orientation="vertical"
-                app:cardCornerRadius="10dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -83,7 +84,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -134,7 +135,6 @@
             android:layout_width="match_parent"
             android:layout_height="184dp"
             android:layout_below="@id/first_row"
-            android:layout_marginLeft="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -145,8 +145,9 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                android:orientation="vertical"
-                app:cardCornerRadius="10dp"
+                android:layout_marginHorizontal="28dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -198,7 +199,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -249,18 +250,19 @@
             android:layout_width="match_parent"
             android:layout_height="179dp"
             android:layout_below="@id/second_row"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="330dp"
+                android:layout_width="wrap_content"
                 android:layout_height="130dp"
+                android:layout_marginHorizontal="28dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="10dp"
+                app:cardCornerRadius="20dp"
+                android:layout_gravity="center_vertical"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -280,14 +282,13 @@
                     android:id="@+id/back6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#C6F33E39">
+                    android:background="#C3FD5D23">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="250dp"
                         android:layout_height="50dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        app:cardBackgroundColor="#C6F33E39"
+                        android:layout_centerInParent="true"
+                        app:cardBackgroundColor="@color/colorPrimary"
                         app:cardCornerRadius="25dp"
                         app:cardElevation="10dp">
 
