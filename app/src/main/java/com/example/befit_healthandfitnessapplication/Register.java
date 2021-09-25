@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 
 public class Register extends AppCompatActivity {
 
-    EditText txtemail,txtpassword,txtcnfpassword;
+    EditText txtfullname,txtemail,txtpassword,txtcnfpassword;
     Button btn_register;
     RadioGroup gender_grp;
     RadioButton gender_radio;
@@ -40,6 +40,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         db = new DBHelper(this);
+        txtfullname = (EditText) findViewById(R.id.fullname);
         txtemail = (EditText) findViewById(R.id.email);
         txtpassword = (EditText) findViewById(R.id.password);
         btn_register = (Button) findViewById(R.id.register);
@@ -52,6 +53,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String fullname = txtfullname.getText().toString();
                 String email = txtemail.getText().toString();
                 String password = txtpassword.getText().toString();
                 String cnfPassword = txtcnfpassword.getText().toString();
@@ -68,9 +70,14 @@ public class Register extends AppCompatActivity {
                 }
                 String gender = gender_radio.getText().toString();
 
-                if(TextUtils.isEmpty(txtemail.getText()) ||  TextUtils.isEmpty(txtpassword.getText()) || TextUtils.isEmpty(txtcnfpassword.getText()))
+                if(TextUtils.isEmpty(txtfullname.getText()) || TextUtils.isEmpty(txtemail.getText()) ||  TextUtils.isEmpty(txtpassword.getText()) || TextUtils.isEmpty(txtcnfpassword.getText()))
                 {
-                    if(TextUtils.isEmpty((txtemail.getText())))
+                    if(TextUtils.isEmpty((txtfullname.getText())))
+                    {
+                        txtfullname.requestFocus();
+                        txtfullname.setError("Full Name cannot be empty !");
+                    }
+                    else if(TextUtils.isEmpty((txtemail.getText())))
                     {
                         txtemail.requestFocus();
                         txtemail.setError("Email cannot be empty !");
@@ -114,7 +121,7 @@ public class Register extends AppCompatActivity {
                          }
                          else
                          {
-                             long val = db.addUser(email,gender,password);
+                             long val = db.addUser(fullname,email,gender,password);
                              if(val>0)
                              {
                                  btn_register.setVisibility(View.INVISIBLE);
