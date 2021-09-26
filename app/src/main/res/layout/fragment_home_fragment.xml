@@ -17,7 +17,8 @@
 
         <LinearLayout
             android:id="@+id/first_row"
-            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="184dp"
             android:orientation="horizontal"
             android:weightSum="2">
@@ -132,7 +133,7 @@
 
         <LinearLayout
             android:id="@+id/second_row"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="184dp"
             android:layout_below="@id/first_row"
             android:orientation="horizontal"
@@ -141,11 +142,11 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="162dp"
                 android:layout_height="165dp"
+                android:layout_marginHorizontal="28dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginHorizontal="28dp"
                 android:orientation="horizontal"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="5dp">
@@ -257,12 +258,12 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="130dp"
+                android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="28dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="10dp"
                 app:cardCornerRadius="20dp"
-                android:layout_gravity="center_vertical"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -284,28 +285,23 @@
                     android:layout_height="match_parent"
                     android:background="#C3FD5D23">
 
-                    <androidx.cardview.widget.CardView
+                    <Button
+                        android:id="@+id/cancel"
                         android:layout_width="250dp"
                         android:layout_height="50dp"
                         android:layout_centerInParent="true"
-                        app:cardBackgroundColor="@color/colorPrimary"
-                        app:cardCornerRadius="25dp"
-                        app:cardElevation="10dp">
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="23dp"
+                        android:background="@drawable/button_bg_2"
+                        android:drawableLeft="@drawable/ic_baseline_goal_fixed_24"
+                        android:drawableTint="@color/white"
+                        android:elevation="100dp"
+                        android:fontFamily="@font/product_sans"
+                        android:text="Set A Goal"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        app:cardCornerRadius="25dp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center|center_vertical"
-                            android:drawableLeft="@drawable/ic_baseline_goal_fixed_24"
-                            android:drawablePadding="10dp"
-                            android:drawableTint="#E8FFFFFF"
-                            android:fontFamily="@font/product_sans"
-                            android:gravity="center"
-                            android:text="Set A Goal"
-                            android:textColor="#F0FFFFFF"
-                            android:textSize="17sp" />
-
-                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:id="@+id/text6"

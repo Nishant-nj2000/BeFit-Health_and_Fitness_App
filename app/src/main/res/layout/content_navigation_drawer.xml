@@ -18,17 +18,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:flow_verticalAlign="bottom"
-        app:layout_constraintBottom_toBottomOf="@id/nav_host_fragment_content_navigation_drawer"
-        app:layout_wrapBehaviorInParent="vertical_only"
-        app:menu="@menu/bottom_nav_menu"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/app_icon.xml" value="0.14635416666666667" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/background_splashscreen.xml" value="0.1707236842105263" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/button_bg.xml" value="0.23489583333333333" />
+        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/button_bg_2.xml" value="0.14635416666666667" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/checkbox_selector.xml" value="0.18854166666666666" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/custom_background.xml" value="0.22314814814814815" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/custom_background_diagonal.xml" value="0.2074074074074074" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2703125" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.23796296296296296" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/image_overlay.xml" value="0.22314814814814815" />
+        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/image_overlay_2.xml" value="0.14635416666666667" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/main_back.xml" value="0.2703125" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/rounded_corners.xml" value="0.2703125" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/drawable/searchbar.xml" value="0.2703125" />
@@ -49,7 +51,8 @@
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.2" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/bottom_nav_bar.xml" value="0.23385416666666667" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/cards_layout.xml" value="0.23385416666666667" />
-        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/content_navigation_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/content_navigation_drawer.xml" value="0.136" />
+        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/dialog.xml" value="0.176" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_advanced__exercises.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_beginner__exercises.xml" value="0.1" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
@@ -65,7 +68,7 @@
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_settings_fragment.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_slideshow.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/fragment_temp.xml" value="0.23385416666666667" />
-        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/goals_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/goals_fragment.xml" value="0.2" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/layout_switch.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/main_background.xml" value="0.25416666666666665" />
         <entry key="..\:/Android_Studio_Projects/BeFit-Health_and_Fitness_App/app/src/main/res/layout/nav_header_home.xml" value="0.25416666666666665" />

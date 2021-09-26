@@ -69,7 +69,7 @@
                 android:fontFamily="@font/product_sans"
                 android:hint="Fullname"
                 android:includeFontPadding="true"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:padding="16dp"
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
