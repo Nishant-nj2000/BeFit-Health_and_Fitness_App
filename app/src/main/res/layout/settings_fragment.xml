@@ -209,7 +209,7 @@
 
             <Button
                 android:id="@+id/update"
-                android:layout_width="174dp"
+                android:layout_width="161dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
                 android:background="@drawable/button_bg"
