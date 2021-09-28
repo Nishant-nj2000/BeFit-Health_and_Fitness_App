@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -64,10 +65,11 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
-    public Cursor userdata()
+    public Cursor userdata(String email)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select * from user where userid = 1",null);
+        Cursor cursor = db.rawQuery("Select fullname from user where email= '"+email+"'",null);
+        Log.i("value is",""+cursor);
         return cursor;
     }
 }

@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BefitHealthAndFitnessApplication">
         <activity
-            android:name=".logout"
-            android:exported="true" />
-        <activity
             android:name=".navigation_drawer"
             android:exported="true"
             android:label="@string/title_activity_navigation_drawer"

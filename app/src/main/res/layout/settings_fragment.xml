@@ -35,17 +35,17 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/username_field"
+            android:id="@+id/email_field"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fullname_field"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/product_sans_italic"
-            android:includeFontPadding="false"
             android:hint="Email id"
-            android:textColorHint="@color/white"
+            android:includeFontPadding="false"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="17sp" />
     </RelativeLayout>
 
@@ -162,7 +162,7 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/email_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -188,7 +188,7 @@
             app:passwordToggleEnabled="true">
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/password_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"

@@ -1,5 +1,6 @@
 package com.example.befit_healthandfitnessapplication;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -63,11 +65,22 @@ public class Settings_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.settings_fragment, container, false);
-//        TextView fullname = (TextView) view.findViewById(R.id.fullname);
-//        db = new DBHelper(getActivity());
-//        Cursor cursor = db.userdata();
-//        Log.i("value is",""+cursor.getString(1));
-//        fullname.setText("" + cursor.getString(1));
+        TextView fullname_tv = (TextView) view.findViewById(R.id.fullname_field);
+        TextView email_field = (TextView) view.findViewById(R.id.email_field);
+        EditText email_tv = (EditText) view.findViewById(R.id.email_tv);
+        EditText password_tv = (EditText) view.findViewById(R.id.password_tv);
+
+        SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
+        String email = pref.getString("email",null);
+        String fullname = pref.getString("fullname",null);
+        String password = pref.getString("password",null);
+//        db = new DBHelper(getContext());
+//        Cursor cursor = db.userdata(email);
+//        fullname_tv.setText("" + cursor.getString(0));
+        fullname_tv.setText(fullname);
+        email_field.setText(email);
+        email_tv.setText(email);
+        password_tv.setText(password);
         return view;
     }
 }

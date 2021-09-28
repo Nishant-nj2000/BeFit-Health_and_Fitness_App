@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -129,6 +130,9 @@ public class Register extends AppCompatActivity {
                                  progressBar.setSecondaryProgress(100);
                                  progressBar.setProgress(10);
                                  progressBar.setMax(100);
+                                 SharedPreferences.Editor editor = getSharedPreferences("user", MODE_PRIVATE).edit();
+                                 editor.putString("fullname", fullname);
+                                 editor.apply();
                                  Toast.makeText(getApplicationContext(), "Registered Successfully", Toast.LENGTH_SHORT).show();
                                  startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                  finish();
@@ -137,7 +141,7 @@ public class Register extends AppCompatActivity {
                              {
                                  btn_register.setVisibility(View.VISIBLE);
                                  progressBar.setVisibility(View.INVISIBLE);
-                                 Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_LONG).show();
                              }
                          }
                     }
