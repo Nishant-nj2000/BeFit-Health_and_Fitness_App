@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString("password", password);
                                 editor.putBoolean("isLoggedIn", true);
                                 editor.apply();
-                                Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(), navigation_drawer.class));
                                 finish();
                             }
