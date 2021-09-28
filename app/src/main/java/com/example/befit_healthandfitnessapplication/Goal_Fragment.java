@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -69,47 +70,41 @@ public class Goal_Fragment extends Fragment implements NumberPicker.OnValueChang
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.goals_fragment, container, false);
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
+        TextView textView1 = (TextView)v.findViewById(R.id.result_tv);
         spinner.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                show();
-                return true;
+                final Dialog d = new Dialog(getContext());
+                d.setTitle("Pick number of days");
+                d.setContentView(R.layout.dialog);
+                Button b1 = (Button) d.findViewById(R.id.cancel);
+                Button b2 = (Button) d.findViewById(R.id.ok);
+                final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+                np.setMaxValue(7);
+                np.setMinValue(1);
+                np.setWrapSelectorWheel(false);
+                d.show();
+                b1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        d.dismiss();
+                    }
+                });
+                b2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int pickedValue = np.getValue();
+                        textView1.setText(Integer.toString(pickedValue));
+                        d.dismiss();
+                        return;
+                    }
+                });
+                return false;
             }
         });
         return v;
 
     }
-
-    public void show()
-    {
-
-        final Dialog d = new Dialog(getContext());
-        d.setTitle("NumberPicker");
-        d.setContentView(R.layout.dialog);
-        Button b1 = (Button) d.findViewById(R.id.cancel);
-        Button b2 = (Button) d.findViewById(R.id.ok);
-        final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
-        np.setMaxValue(7);
-        np.setMinValue(1);
-        np.setWrapSelectorWheel(false);
-        np.setOnValueChangedListener(this);
-        d.show();
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                d.dismiss();
-
-            }
-        });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int value = np.getValue();
-
-            }
-        });
-    }
-
 
     @Override
     public void onValueChange(NumberPicker numberPicker, int oldVal, int newVal) {

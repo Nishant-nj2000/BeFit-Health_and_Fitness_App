@@ -63,4 +63,11 @@ public class DBHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
+    public Cursor userdata()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from user where userid = 1",null);
+        return cursor;
+    }
 }
