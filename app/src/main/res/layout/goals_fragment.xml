@@ -37,7 +37,7 @@
 
 
          <TextView
-             android:layout_marginTop="150dp"
+             android:layout_marginTop="100dp"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:fontFamily="@font/product_sans"
@@ -51,6 +51,46 @@
              android:layout_height="70dp"
              android:backgroundTint="@color/white"
              style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/result_tv"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:hint="---"
+                android:fontFamily="@font/product_sans"
+                android:gravity="end|center_vertical"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+
+                <TextView
+                android:id="@+id/day_days_txt"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="start|center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/product_sans"
+                android:text="Day(s)"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+         </LinearLayout>
+
+
+         <Button
+             android:layout_width="match_parent"
+             android:id="@+id/save_goal"
+             android:layout_height="wrap_content"
+             android:background="@drawable/button_bg"
+             android:layout_marginVertical="80dp"
+             android:text="Save Goal"
+             android:elevation="100dp"
+             android:fontFamily="@font/product_sans"
+             android:textColor="@color/white" />
 
 
       </LinearLayout>

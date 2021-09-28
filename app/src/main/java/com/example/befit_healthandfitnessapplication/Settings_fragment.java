@@ -1,12 +1,15 @@
 package com.example.befit_healthandfitnessapplication;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +17,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Settings_fragment extends Fragment {
-
+    DBHelper db;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +62,12 @@ public class Settings_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.settings_fragment, container, false);
+        View view = inflater.inflate(R.layout.settings_fragment, container, false);
+//        TextView fullname = (TextView) view.findViewById(R.id.fullname);
+//        db = new DBHelper(getActivity());
+//        Cursor cursor = db.userdata();
+//        Log.i("value is",""+cursor.getString(1));
+//        fullname.setText("" + cursor.getString(1));
+        return view;
     }
 }

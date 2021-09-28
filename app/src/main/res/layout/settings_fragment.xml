@@ -28,8 +28,9 @@
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/product_sans"
             android:includeFontPadding="false"
+            android:hint="Fullname"
+            android:textColorHint="@color/white"
             android:textAllCaps="true"
-            android:text="user fullname"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
@@ -42,7 +43,8 @@
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/product_sans_italic"
             android:includeFontPadding="false"
-            android:text="email id"
+            android:hint="Email id"
+            android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:textSize="17sp" />
     </RelativeLayout>

@@ -1,14 +1,18 @@
 package com.example.befit_healthandfitnessapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +66,18 @@ public class Home_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
+        Button button1 = (Button) view.findViewById(R.id.set_a_goal);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Goal_Fragment goal_fragment = new Goal_Fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer,goal_fragment,"null");
+                fragmentTransaction.addToBackStack("null");
+                fragmentTransaction.commit();
+            }
+        });
         return view;
     }
 }

@@ -1,8 +1,10 @@
 package com.example.befit_healthandfitnessapplication;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -56,6 +58,16 @@ public class navigation_drawer extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle item selection
+//        switch (item.getItemId()) {
+//            case R.id.nav_logout:
+//                Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_SHORT).show();
+//                return true;
+//        }
+//        return true;
+//    }
 
 //    public void onBackPressed() {
 //        if(getFragmentManager().getBackStackEntryCount() == 0) {
