@@ -1,6 +1,8 @@
 package com.example.befit_healthandfitnessapplication;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,9 +12,11 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +26,8 @@ import android.widget.Toast;
  * Use the {@link Goal_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Goal_Fragment extends Fragment implements NumberPicker.OnValueChangeListener {
-
+public class Goal_Fragment extends Fragment {
+    DBHelper db;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -67,47 +71,105 @@ public class Goal_Fragment extends Fragment implements NumberPicker.OnValueChang
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View v =  inflater.inflate(R.layout.goals_fragment, container, false);
+
+        SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
+        String goal = pref.getString("goal",null);
+
+        String [] values = {"---","1","2","3","4","5","6","7"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
         TextView textView1 = (TextView)v.findViewById(R.id.result_tv);
-        spinner.setOnTouchListener(new View.OnTouchListener() {
+        Button save_goal = (Button) v.findViewById(R.id.save_goal);
+
+        textView1.setText(goal);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item,values);
+        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final Dialog d = new Dialog(getContext());
-                d.setTitle("Pick number of days");
-                d.setContentView(R.layout.dialog);
-                Button b1 = (Button) d.findViewById(R.id.cancel);
-                Button b2 = (Button) d.findViewById(R.id.ok);
-                final NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
-                np.setMaxValue(7);
-                np.setMinValue(1);
-                np.setWrapSelectorWheel(false);
-                d.show();
-                b1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        d.dismiss();
-                    }
-                });
-                b2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        int pickedValue = np.getValue();
-                        textView1.setText(Integer.toString(pickedValue));
-                        d.dismiss();
-                        return;
-                    }
-                });
-                return false;
+            public void onItemSelected(AdapterView<?> adapterView, View view, int positions, long l) {
+                String no_of_days = String.valueOf(spinner.getSelectedItem());
+                if(spinner.getSelectedItem()!="---")
+                {
+                    textView1.setText(no_of_days);
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
+
+        save_goal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    int no_of_days = Integer.parseInt(String.valueOf(textView1.getText()));
+                    SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
+                    String userid = pref.getString("userid",null);
+                    db = new DBHelper(getContext());
+                    long val = db.set_goal(userid,no_of_days);
+                    if(val>0)
+                    {
+                        SharedPreferences.Editor editor = getContext().getSharedPreferences("user", 0).edit();
+                        editor.putString("goal", String.valueOf(no_of_days));
+                        editor.apply();
+                        Toast.makeText(getContext(), "Goal Saved for "+no_of_days+" training per week.", Toast.LENGTH_LONG).show();
+                    }
+
+                    try {
+                        long val2 = db.update_goal(userid,no_of_days);
+                        if(val2>0)
+                        {
+                            SharedPreferences.Editor editor = getContext().getSharedPreferences("user", 0).edit();
+                            editor.putString("goal", String.valueOf(no_of_days));
+                            editor.apply();
+                            Toast.makeText(getContext(), "Goal Updated to "+no_of_days+" days training per week.", Toast.LENGTH_LONG).show();
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } catch (NumberFormatException e) {
+
+                }
+
+            }
+        });
+
+//        spinner.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                Dialog d = new Dialog(getContext());
+//                d.setContentView(R.layout.dialog);
+//                NumberPicker np = (NumberPicker) d.findViewById(R.id.numberPicker1);
+//                Button b1 = (Button) d.findViewById(R.id.cancel);
+//                Button b2 = (Button) d.findViewById(R.id.ok);
+//                np.setMaxValue(7);
+//                np.setMinValue(1);
+//                d.show();
+//                b1.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        d.dismiss();
+//                    }
+//                });
+//                b2.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        int pickedValue = np.getValue();
+//                        textView1.setText(Integer.toString(pickedValue));
+//                        d.dismiss();
+//                    }
+//                });
+//                return true;
+//            }
+//        });
         return v;
 
-    }
-
-    @Override
-    public void onValueChange(NumberPicker numberPicker, int oldVal, int newVal) {
-        Log.i("value is",""+newVal);
     }
 }

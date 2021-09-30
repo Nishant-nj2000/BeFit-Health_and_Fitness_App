@@ -1,6 +1,7 @@
 package com.example.befit_healthandfitnessapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,6 +70,12 @@ public class Home_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
+
+        TextView no_of_days_tv = (TextView) view.findViewById(R.id.no_of_days_tv);
+        SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
+        String goal = pref.getString("goal",null);
+        no_of_days_tv.setText(goal+" Day(s) a week");
+
         Button button1 = (Button) view.findViewById(R.id.set_a_goal);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

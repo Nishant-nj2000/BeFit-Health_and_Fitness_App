@@ -59,11 +59,11 @@
 
             <TextView
                 android:id="@+id/result_tv"
-                android:layout_width="150dp"
+                android:layout_width="117dp"
                 android:layout_height="match_parent"
-                android:hint="---"
                 android:fontFamily="@font/product_sans"
                 android:gravity="end|center_vertical"
+                android:hint="---"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="18sp" />
@@ -82,14 +82,14 @@
 
 
          <Button
-             android:layout_width="match_parent"
              android:id="@+id/save_goal"
+             android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:background="@drawable/button_bg"
              android:layout_marginVertical="80dp"
-             android:text="Save Goal"
+             android:background="@drawable/button_bg"
              android:elevation="100dp"
              android:fontFamily="@font/product_sans"
+             android:text="Save Goal"
              android:textColor="@color/white" />
 
 

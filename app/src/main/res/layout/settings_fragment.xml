@@ -208,7 +208,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/update"
+                android:id="@+id/cancel"
                 android:layout_width="161dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
@@ -221,7 +221,7 @@
                 android:textColor="@color/white" />
 
             <Button
-                android:id="@+id/cancel"
+                android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"
