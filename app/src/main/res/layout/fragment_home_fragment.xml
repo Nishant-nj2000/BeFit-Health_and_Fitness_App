@@ -113,6 +113,18 @@
                         android:src="@drawable/goal" />
 
                     <TextView
+                        android:id="@+id/no_of_days_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@id/text2"
+                        android:text="-- Days"
+                        android:fontFamily="@font/product_sans"
+                        android:textColor="#F3FFFFFF"
+                        android:textSize="17sp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
                         android:id="@+id/text2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

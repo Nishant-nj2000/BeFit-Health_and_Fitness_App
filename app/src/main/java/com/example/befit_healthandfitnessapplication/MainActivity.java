@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -128,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString("email", email);
                                 editor.putString("password", password);
                                 editor.putBoolean("isLoggedIn", true);
+                                db = new DBHelper(getApplicationContext());
+                                Cursor cursor = db.getuserID(email);
+                                if (cursor.moveToFirst()) {
+                                    editor.putString("userid", cursor.getString(0));
+                                }
                                 editor.apply();
                                 Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(getApplicationContext(), navigation_drawer.class));

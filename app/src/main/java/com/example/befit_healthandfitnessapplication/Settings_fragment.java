@@ -10,8 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,18 +71,36 @@ public class Settings_fragment extends Fragment {
         TextView email_field = (TextView) view.findViewById(R.id.email_field);
         EditText email_tv = (EditText) view.findViewById(R.id.email_tv);
         EditText password_tv = (EditText) view.findViewById(R.id.password_tv);
+        Button submit = (Button)view.findViewById(R.id.submit);
+
 
         SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
-        String email = pref.getString("email",null);
-        String fullname = pref.getString("fullname",null);
-        String password = pref.getString("password",null);
-//        db = new DBHelper(getContext());
-//        Cursor cursor = db.userdata(email);
-//        fullname_tv.setText("" + cursor.getString(0));
-        fullname_tv.setText(fullname);
-        email_field.setText(email);
-        email_tv.setText(email);
-        password_tv.setText(password);
+        String userid = pref.getString("userid",null);
+
+
+        db = new DBHelper(getContext());
+        Cursor cursor = db.userdata(userid);
+
+        if (cursor.moveToFirst()) {
+            fullname_tv.setText("" + cursor.getString(1));
+            password_tv.setText(""+ cursor.getString(4));
+            email_field.setText(""+ cursor.getString(2));
+            email_tv.setText(""+ cursor.getString(2));
+            Log.i("value is",""+cursor);
+        }
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               String email = email_field.getText().toString();
+               String password = password_tv.getText().toString();
+               long val = db.update_user(userid,email,password);
+                if(val>0)
+                {
+                    Toast.makeText(getContext(), "Profile Updated Successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
         return view;
     }
 }

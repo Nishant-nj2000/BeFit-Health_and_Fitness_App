@@ -16,11 +16,6 @@
             android:title="@string/Training_Plans"
             android:fontFamily="@font/product_sans_bold"/>
         <item
-            android:id="@+id/nav_reports"
-            android:icon="@drawable/ic_baseline_bar_chart_24"
-            android:title="@string/reports"
-            android:fontFamily="@font/product_sans_bold"/>
-        <item
             android:id="@+id/nav_goals"
             android:icon="@drawable/ic_baseline_goal_fixed_24"
             android:title="@string/goals"

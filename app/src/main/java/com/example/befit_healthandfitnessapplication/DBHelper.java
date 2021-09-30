@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-
-import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -31,7 +28,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
 
     public long addUser(String fullname, String email, String gender, String password)
@@ -65,11 +61,51 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
     }
 
-    public Cursor userdata(String email)
+    public Cursor getuserID(String email)
     {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("Select fullname from user where email= '"+email+"'",null);
-        Log.i("value is",""+cursor);
+        Cursor cursor = db.rawQuery("Select userid from user where email= '"+email+"'",null);
         return cursor;
+    }
+
+    public Cursor userdata(String userid)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from user where userid = "+userid+"",null);
+        return cursor;
+    }
+
+    public long set_goal(String userid, int no_of_days)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("userid",userid);
+        contentValues.put("trainingdays",no_of_days);
+        long res = db.insert("goal", null, contentValues);
+        db.close();
+        return res;
+    }
+
+    public long update_goal(String userid, int no_of_days) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("trainingdays",no_of_days);
+        String whereclause = "userid=?";
+        String[] whereArgs = {userid.toString()};
+        long res = db.update("goal", contentValues,whereclause,whereArgs);
+        db.close();
+        return res;
+    }
+
+    public long update_user(String userid, String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("email",email);
+        contentValues.put("password",password);
+        String whereclause = "userid=?";
+        String[] whereArgs = {userid.toString()};
+        long res = db.update("user", contentValues,whereclause,whereArgs);
+        db.close();
+        return res;
     }
 }
