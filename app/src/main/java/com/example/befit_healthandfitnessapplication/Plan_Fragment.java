@@ -86,11 +86,11 @@ public class Plan_Fragment extends Fragment {
 //        planRV.setLayoutManager(linearLayoutManager);
 //        planRV.setAdapter(planAdapter);
 
-        final CardView cardview1 = (CardView) view.findViewById(R.id.first);
-        final CardView cardview2 = (CardView) view.findViewById(R.id.second);
-        final CardView cardview3 = (CardView) view.findViewById(R.id.third);
+        final CardView beginnercv = (CardView) view.findViewById(R.id.beginner);
+        final CardView intermediatecv = (CardView) view.findViewById(R.id.intermediate);
+        final CardView advancedcv = (CardView) view.findViewById(R.id.advanced);
 
-        cardview1.setOnClickListener(new View.OnClickListener() {
+        beginnercv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Beginner_Exercises beginner_exercises = new Beginner_Exercises();
@@ -103,7 +103,7 @@ public class Plan_Fragment extends Fragment {
             }
         });
 
-        cardview2.setOnClickListener(new View.OnClickListener() {
+        intermediatecv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intermediate_Exercises intermediate_exercises = new Intermediate_Exercises();
@@ -116,7 +116,7 @@ public class Plan_Fragment extends Fragment {
             }
         });
 
-        cardview3.setOnClickListener(new View.OnClickListener() {
+        advancedcv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Advanced_Exercises advanced_exercises = new Advanced_Exercises();

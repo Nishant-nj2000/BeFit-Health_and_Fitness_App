@@ -78,7 +78,7 @@ public class Goal_Fragment extends Fragment {
         SharedPreferences pref = getContext().getSharedPreferences("user", 0); // 0 - for private mode
         String goal = pref.getString("goal",null);
 
-        String [] values = {"---","1","2","3","4","5","6","7"};
+        String [] values = {"---","1 Day","2 Days","3 Days","4 Days","5 Days","6 Days","7 Days"};
         Spinner spinner = (Spinner) v.findViewById(R.id.spinner1);
         TextView textView1 = (TextView)v.findViewById(R.id.result_tv);
         Button save_goal = (Button) v.findViewById(R.id.save_goal);

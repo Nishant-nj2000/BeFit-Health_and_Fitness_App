@@ -2,7 +2,10 @@ package com.example.befit_healthandfitnessapplication;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +62,64 @@ public class Intermediate_Exercises extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_intermediate__exercises, container, false);
+        View view = inflater.inflate(R.layout.fragment_intermediate__exercises, container, false);
+
+        final CardView arm_intermediatecv = (CardView) view.findViewById(R.id.arm_intermediate);
+        final CardView chest_intermediatecv = (CardView) view.findViewById(R.id.chest_intermediate);
+        final CardView leg_intermediatecv = (CardView) view.findViewById(R.id.leg_intermediate);
+        final CardView abs_intermediatecv = (CardView) view.findViewById(R.id.abs_intermediate);
+
+        arm_intermediatecv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arm_intermediate arm_intermediate = new arm_intermediate();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, arm_intermediate,"arm_intermediate");
+                fragmentTransaction.addToBackStack("arm_intermediate");
+                fragmentTransaction.commit();
+            }
+        });
+
+        chest_intermediatecv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chest_intermediate chest_intermediate = new chest_intermediate();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, chest_intermediate,"chest_intermediate");
+                fragmentTransaction.addToBackStack("chest_intermediate");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        leg_intermediatecv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                leg_intermediate leg_intermediate = new leg_intermediate();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, leg_intermediate,"leg_intermediate");
+                fragmentTransaction.addToBackStack("leg_intermediate");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        abs_intermediatecv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abs_intermediate abs_intermediate = new abs_intermediate();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, abs_intermediate,"abs_intermediate");
+                fragmentTransaction.addToBackStack("abs_intermediate");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        return view;
     }
 }
