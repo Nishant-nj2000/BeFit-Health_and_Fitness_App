@@ -2,7 +2,10 @@ package com.example.befit_healthandfitnessapplication;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +62,65 @@ public class Beginner_Exercises extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_beginner__exercises, container, false);
+        View view = inflater.inflate(R.layout.fragment_beginner__exercises, container, false);
+
+        final CardView arm_beginnercv = (CardView) view.findViewById(R.id.arm_beginner);
+        final CardView chest_beginnercv = (CardView) view.findViewById(R.id.chest_beginner);
+        final CardView leg_beginnercv = (CardView) view.findViewById(R.id.leg_beginner);
+        final CardView abs_beginnercv = (CardView) view.findViewById(R.id.abs_beginner);
+
+        arm_beginnercv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arm_beginner arm_beginner = new arm_beginner();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, arm_beginner,"arm_beginner");
+                fragmentTransaction.addToBackStack("arm_beginner");
+                fragmentTransaction.commit();
+            }
+        });
+
+        chest_beginnercv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                chest_beginner chest_beginner = new chest_beginner();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, chest_beginner,"chest_beginner");
+                fragmentTransaction.addToBackStack("chest_beginner");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        leg_beginnercv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                leg_beginner leg_beginner = new leg_beginner();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, leg_beginner,"leg_beginner");
+                fragmentTransaction.addToBackStack("leg_beginner");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+        abs_beginnercv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                abs_beginner abs_beginner = new abs_beginner();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_content_navigation_drawer, abs_beginner,"abs_beginner");
+                fragmentTransaction.addToBackStack("abs_beginner");
+                fragmentTransaction.commit();
+
+            }
+        });
+
+
+        return view;
     }
 }

@@ -27,11 +27,11 @@
             android:layout_marginTop="40dp"
             android:layout_toRightOf="@+id/profile_image"
             android:fontFamily="@font/product_sans"
-            android:includeFontPadding="false"
             android:hint="Fullname"
-            android:textColorHint="@color/white"
+            android:includeFontPadding="false"
             android:textAllCaps="true"
             android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="20sp" />
 
         <TextView

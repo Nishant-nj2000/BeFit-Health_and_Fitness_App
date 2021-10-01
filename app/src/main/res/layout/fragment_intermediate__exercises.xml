@@ -18,7 +18,7 @@
             android:layout_centerHorizontal="true">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/first"
+                android:id="@+id/arm_intermediate"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_marginStart="10dp"
@@ -58,7 +58,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/second"
+                android:id="@+id/chest_intermediate"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_below="@id/first"
@@ -100,7 +100,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/fourth"
+                android:id="@+id/leg_intermediate"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_below="@id/second"
@@ -143,7 +143,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/fifth"
+                android:id="@+id/abs_intermediate"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
                 android:layout_below="@id/fourth"
