@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/main_back">
@@ -8,13 +9,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <NumberPicker
-            android:id="@+id/numberPicker1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:outlineAmbientShadowColor="@color/colorPrimary" />
+        <VideoView
+            android:id="@+id/videoView1"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
 
 
         <RelativeLayout
@@ -23,34 +24,54 @@
             android:background="#F39573"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/cancel"
+            <TextView
+                android:id="@+id/timer_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_above="@+id/bottom_row"
+                android:text="00:00"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="63dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="40sp"
+                tools:ignore="NotSibling" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F39573"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignStart="@id/cancel"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="end"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="94dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginStart="211dp"
                 android:background="@drawable/main_back"
                 android:clickable="true"
-                android:fontFamily="@font/product_sans_bold"
-                android:text="Cancel"
                 android:elevation="40dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="START"
                 android:textSize="15sp" />
 
             <Button
-                android:id="@+id/ok"
-                android:layout_width="wrap_content"
+                android:id="@+id/cancel"
+                android:layout_width="182dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="end"
+                android:layout_gravity="start|center_horizontal"
                 android:background="@drawable/main_back"
                 android:clickable="true"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                android:elevation="40dp"
                 android:fontFamily="@font/product_sans_bold"
                 android:shadowColor="@color/colorPrimary"
-                android:text="OK"
-                android:elevation="40dp"
+                android:text="CANCEL"
                 android:textSize="15sp" />
         </RelativeLayout>
 

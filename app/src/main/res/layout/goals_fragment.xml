@@ -59,11 +59,21 @@
 
             <TextView
                 android:id="@+id/result_tv"
-                android:layout_width="171dp"
+                android:layout_width="149dp"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/product_sans"
                 android:gravity="end|center_vertical"
                 android:hint="---"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="18sp" />
+            <TextView
+                android:layout_width="171dp"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/product_sans"
+                android:gravity="start|center_vertical"
+                android:hint="Day(s)"
+                android:layout_marginLeft="5dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="18sp" />
