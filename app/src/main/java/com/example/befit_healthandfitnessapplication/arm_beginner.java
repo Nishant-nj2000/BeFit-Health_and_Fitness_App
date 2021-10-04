@@ -1,24 +1,30 @@
 package com.example.befit_healthandfitnessapplication;
 
+import android.app.Dialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +33,10 @@ import java.util.List;
  */
 public class arm_beginner extends Fragment{
 
+    private static final long START_TIME_IN_MILIS = 600000;
+    private CountDownTimer countDownTimer;
+    private  boolean mTimerRunning;
+    private long mTimeLeftInMilis = START_TIME_IN_MILIS;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -90,7 +100,74 @@ public class arm_beginner extends Fragment{
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), R.layout.custom_list_view,R.id.textView1234,arm_beginner_exercise_names);
         arm_beginner_exercises_lv.setAdapter(adapter);
+
+        arm_beginner_exercises_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    beginner_click();
+
+            }
+        });
+
+
         return view;
     }
+
+    private void beginner_click() {
+        final Dialog dialog= new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog);
+        Button cancel  = (Button) dialog.findViewById(R.id.cancel);
+        Button start  = (Button) dialog.findViewById(R.id.start);
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView timer_tv = (TextView) dialog.findViewById(R.id.timer_tv);
+                if(mTimerRunning)
+                {
+                    countDownTimer.cancel();
+                    mTimerRunning = false;
+                    start.setText("Start");
+                    cancel.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    countDownTimer = new CountDownTimer(mTimeLeftInMilis,1000) {
+                        @Override
+                        public void onTick(long milisUntilFinished) {
+                            mTimeLeftInMilis = milisUntilFinished;
+                            int minutes = (int) (mTimeLeftInMilis / 1000) / 60;
+                            int seconds = (int) (mTimeLeftInMilis / 1000) % 60;
+                            String timeLeftFormattted = String.format(Locale.getDefault(),"%02d:%02d", minutes, seconds);
+                            timer_tv.setText(timeLeftFormattted);
+                        }
+
+                        @Override
+                        public void onFinish() {
+                        mTimerRunning = false;
+                        start.setText("Start");
+                        cancel.setVisibility(View.INVISIBLE);
+                        }
+                    }.start();
+                    mTimerRunning = true;
+                    start.setText("pause");
+                    cancel.setVisibility(view.INVISIBLE);
+                }
+            }
+        });
+        dialog.show();
+    }
+
+
+    private void pauseTimer() {
+    }
+
 
 }
