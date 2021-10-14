@@ -60,7 +60,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="17 Mins · 11 Workouts"
+            android:text="20 Mins · 10 Workouts"
             android:layout_marginLeft="20dp"
             android:textSize="17sp"
             android:fontFamily="@font/product_sans_bold"/>
