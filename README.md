@@ -52,21 +52,23 @@ Internet Connection
 
 ![image](https://user-images.githubusercontent.com/72196083/137586980-49f0d3c4-23f4-4140-8ce6-96fef11e885f.png)
         
-        **Arm_beginner**
-        
-        ![image](https://user-images.githubusercontent.com/72196083/137587000-e41f0a6a-c114-411e-90b6-530ca1032240.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587010-efcdc6f1-b95b-4612-b7b6-58aa7554ae38.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587028-e16d6005-2e7e-4ad2-9655-ae3264908e16.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587037-5c2f166d-ecd5-4897-9ced-b8e78c9edb0b.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587042-572d7ec1-fca8-4ffd-b28b-768e491dad0a.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587049-64b7255d-c990-4afb-9410-035d19c60dc7.png)
+**Arm_beginner**
+
+![image](https://user-images.githubusercontent.com/72196083/137587000-e41f0a6a-c114-411e-90b6-530ca1032240.png)
+![image](https://user-images.githubusercontent.com/72196083/137587010-efcdc6f1-b95b-4612-b7b6-58aa7554ae38.png)
+![image](https://user-images.githubusercontent.com/72196083/137587028-e16d6005-2e7e-4ad2-9655-ae3264908e16.png)
+![image](https://user-images.githubusercontent.com/72196083/137587037-5c2f166d-ecd5-4897-9ced-b8e78c9edb0b.png)
+![image](https://user-images.githubusercontent.com/72196083/137587042-572d7ec1-fca8-4ffd-b28b-768e491dad0a.png)
+![image](https://user-images.githubusercontent.com/72196083/137587049-64b7255d-c990-4afb-9410-035d19c60dc7.png)
 
 **INTERMEDIATE**
 
 ![image](https://user-images.githubusercontent.com/72196083/137587065-3bed4822-ae04-4931-aba7-bddaf36e3312.png)
-        **CHEST INTERMEDIATE**
-        ![image](https://user-images.githubusercontent.com/72196083/137587080-a1c20a86-b734-4eef-8369-433380e5fdd4.png)
-        ![image](https://user-images.githubusercontent.com/72196083/137587091-cef16d46-0dc6-44cb-8579-a8cb1c7cc0ad.png)
+
+**CHEST INTERMEDIATE**
+
+![image](https://user-images.githubusercontent.com/72196083/137587080-a1c20a86-b734-4eef-8369-433380e5fdd4.png)
+![image](https://user-images.githubusercontent.com/72196083/137587091-cef16d46-0dc6-44cb-8579-a8cb1c7cc0ad.png)
         
 **ADVANCED**
 
