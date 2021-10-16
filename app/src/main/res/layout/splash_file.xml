@@ -6,19 +6,37 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
+<!--    <com.scwang.wave.MultiWaveHeader-->
+<!--        android:id="@+id/waveHeader"-->
+<!--        android:layout_width="411dp"-->
+<!--        android:layout_height="123dp"-->
+<!--        android:scaleY="-1"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:mwhCloseColor="#002E65"-->
+<!--        app:mwhProgress="1"-->
+<!--        app:mwhStartColor="#FF4400"-->
+<!--        app:mwhVelocity="1"-->
+<!--        app:mwhWaves="PairWave"-->
+<!--        tools:ignore="MissingConstraints" />-->
+
     <com.scwang.wave.MultiWaveHeader
-        android:id="@+id/waveHeader"
-        android:layout_width="411dp"
-        android:layout_height="88dp"
+        android:id="@+id/waveHeader2"
+        android:layout_width="418dp"
+        android:layout_height="131dp"
         android:scaleY="-1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:mwhCloseColor="#002E65"
+        app:mwhColorAlpha="0.45"
+        app:mwhGradientAngle="45"
         app:mwhProgress="1"
         app:mwhStartColor="#FF4400"
         app:mwhVelocity="1"
-        app:mwhWaves="PairWave"
+        app:mwhWaveHeight="50dp"
+        app:mwhWaves="MultiWave"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -33,6 +51,6 @@
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

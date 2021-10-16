@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
-    
+
     <ImageView
         android:id="@+id/imgView_logo"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:scaleType="centerInside"
         android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,34 @@
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
             <EditText
+                android:id="@+id/fullname"
+                android:autofillHints="name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="16dp"
+                android:fontFamily="@font/product_sans"
+                android:hint="Fullname"
+                android:includeFontPadding="true"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#B9B8B8"
+            app:hintEnabled="false"
+            android:layout_marginTop="20dp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+            <EditText
                 android:id="@+id/email"
+                android:autofillHints="emailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
@@ -74,7 +101,6 @@
                 android:textSize="14sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,6 +112,7 @@
 
             <EditText
                 android:id="@+id/password"
+                android:autofillHints="password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -109,6 +136,7 @@
             app:boxStrokeWidthFocused="0dp">
             <EditText
                 android:id="@+id/cnfpassword"
+                android:autofillHints="password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -159,6 +187,17 @@
             android:textColor="@color/white" />
 
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="false"
+            android:visibility="invisible" />
+
+
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

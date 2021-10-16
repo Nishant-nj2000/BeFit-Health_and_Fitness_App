@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -13,6 +14,11 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.BefitHealthAndFitnessApplication">
+        <activity
+            android:name=".navigation_drawer"
+            android:exported="true"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/Theme.BefitHealthAndFitnessApplication.NoActionBar" />
         <activity
             android:name=".Forgot_Password"
             android:exported="true" />
@@ -25,10 +31,8 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"

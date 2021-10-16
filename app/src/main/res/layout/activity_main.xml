@@ -10,7 +10,7 @@
         android:id="@+id/imgView_logo"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:scaleType="centerInside"
         android:src="@drawable/icon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,8 +62,10 @@
             android:layout_marginTop="40dp"
             app:boxStrokeWidth="0dp"
             app:boxStrokeWidthFocused="0dp">
+
             <EditText
                 android:id="@+id/email"
+                android:autofillHints="emailAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_bg"
@@ -90,6 +92,7 @@
             app:passwordToggleEnabled="true">
             <EditText
                 android:id="@+id/password"
+                android:autofillHints="password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edittext_bg"
@@ -130,6 +133,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/lin_inputs" />
 
+    <LinearLayout
+        app:layout_constraintBottom_toTopOf="@id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginLeft="70dp"
+            android:indeterminate="false"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="181dp" />
+    </LinearLayout>
+
+
     <TextView
         android:id="@+id/register"
         android:layout_width="wrap_content"
@@ -142,5 +165,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
