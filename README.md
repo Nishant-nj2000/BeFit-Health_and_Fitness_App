@@ -18,12 +18,6 @@ Android 5 or later
 Ram > 2 GB
 Internet Connection
 
-**Technology Used:**
-⮚	 XML
-⮚	Java
-⮚	JSON
-⮚	Android Studio
-
 
 **Screenshots**
 **SPLASHSCREEN**
