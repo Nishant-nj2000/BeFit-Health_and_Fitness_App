@@ -18,8 +18,8 @@ Android 5 or later
 Ram > 2 GB
 Internet Connection
 
+# Screenshots
 
-**Screenshots**
 **SPLASHSCREEN**
 
 ![image](https://user-images.githubusercontent.com/72196083/137586903-53633dd7-53c4-49a4-834f-e334a3d29775.png)
